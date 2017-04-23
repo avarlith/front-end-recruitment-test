@@ -1,0 +1,221 @@
+@mixin wrapper($color1, $color2, $width) {
+    width: $width;
+    background-color: $color1;
+    border: 1px solid $color1;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 0 $color2;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    @include wrapper(#6BD400, green, 100%);
+    height: 55px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.add-to-cart-button {
+    @extend .btn-submit;
+    width: 100%;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.black {
+    color: black;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    i {
+        font-size: 14px;
+        color: #484848;
+        margin-left: 10px;
+    }
+}
+
+.black-circle {
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: black;
+    color: white;    
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+.personal-data, .payment-data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .wrapper-narrow {
+        @include wrapper(white, silver, 48%);
+    }
+
+    .wrapper-wide {
+        @include wrapper(white, silver, 100%);
+    }
+
+    .wrapper-button {
+         @include wrapper(#6BD400, green, 100%); 
+    }
+
+    .wrapper-select {
+        @include wrapper(white, silver, 48%);
+        position: relative;
+
+        select {
+            border: none;
+            width: 95%;
+            -webkit-appearance: none; 
+            -moz-appearance: none;
+            -ms-progress-appearance: none;
+            background-color: white;
+            font-size: 18px;
+            padding: 0 0 10px 10px;
+            position: relative;
+            z-index: 1;
+            background: transparent;
+
+            + i {
+                color: black;
+                position: absolute;
+                top: 30%;
+                right: 15px;
+            }
+        }   
+    }
+
+    label {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    input {
+        border: none;
+        padding: 0 0 10px 10px;
+        width: 90%;
+        font-size: 20px;
+    }
+
+    input#credit-card {
+        width: 88%;
+    }
+    
+    .btn-submit {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        i {
+            font-size: 20px;
+            color: white;
+        }
+
+        div {
+            margin: 3px 0 0 10px;
+        }
+    } 
+    
+    div:nth-child(2) i {
+        font-size: 20px;
+        color: silver;
+        margin-left: -15px;
+    }
+
+    .visa {
+        border: 1px solid silver;
+        border-radius: 5px;
+        text-align: center;
+        display: inline-block;
+        color: darkblue;
+        font-style: italic;
+        margin-top: -15px;
+    }
+}
+
+.order-table {
+    @include wrapper(white, silver, 100%);
+    margin-left: 15px;
+
+    .table {
+        margin: 5px;
+        border: 1px dashed #dbdbdb;
+        border-radius: 5px;
+       
+        .order-description {
+            width: 90%;
+            margin: 10px 10px 15px 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+            div:first-child {
+                width: 100%;
+                margin: 10px 0 10px 0;
+            }
+        }
+
+        .left-side, .right-side {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            font-size: 14px;
+        }
+
+        .left-side {
+            width: 60%;
+
+            span {
+                width: 100%;
+                text-align: left;
+                margin-top: 10px;
+            }
+        }
+
+        .right-side {
+            width: 40%;
+
+            span {
+                width: 100%;
+                text-align: right;
+                margin-top: 10px;
+            }
+        }
+
+        .summary {
+            width: 90%;
+            margin: 15px 0 10px 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-top: 1px dashed #dbdbdb;
+        }
+
+        .summary:last-child div:last-child{ 
+            margin-bottom: 25px;
+
+            span {
+                font-size: 20px;
+            }
+        }
+    }
+}
