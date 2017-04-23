@@ -73,13 +73,4 @@
   }
 
   // Your custom JavaScript goes here
-  // task 3
-  var button = document.querySelector('button');
-  var bacon = document.querySelector('img');
-  var sectionImg = document.querySelector('main div section:last-child');
-
-  button.addEventListener('click', function() {
-    var anotherBacon = bacon.cloneNode(true);
-    sectionImg.appendChild(anotherBacon);
-  });
 })();
