@@ -264,11 +264,11 @@
                 </div>
                 <div class="wrapper-narrow">
                   <label for="postal-code">Postal Code</label><br>
-                  <input type="text" name="postal-code" id="postal-code" placeholder="10001">
+                  <input type="text" name="postal-code" id="postal-code"  maxlength="5" placeholder="10001">
                 </div>
                 <div class="wrapper-wide">
                   <label for="phone">Phone Number</label><br>
-                  <input type="tel" name="phone" id="phone" placeholder="(212) 692-93-92">
+                  <input type="tel" name="phone" id="phone" maxlength="15" placeholder="(212) 692-93-92">
                 </div>                        
               </div>
             </section>
@@ -318,17 +318,17 @@
               <div class="payment-data bold">
                 <div class="wrapper-wide">
                   <label for="credit-card">Credit Card Number</label><br>
-                  <input type="number" name="credit-card" id="credit-card" placeholder="0000-0000-0000-0000">
+                  <input type="text" name="credit-card" id="credit-card" maxlength="19" placeholder="0000-0000-0000-0000">
                   <div class="visa uppercase bold">visa</div>
                 </div>
                 <div class="wrapper-narrow">
                   <label for="security-code">Security code</label><br>
-                  <input type="password" name="security-code" id="security-code" placeholder="***">
+                  <input type="password" name="security-code" id="security-code" maxlength="3" placeholder="***">
                   <i class="material-icons">help_outline</i>
                 </div>
                 <div class="wrapper-narrow">
                   <label for="expiration-date">Expiration date</label><br>
-                  <input type="text" name="last-name" id="last-name" placeholder="MM/YY">
+                  <input type="text" name="last-name" id="expiration-date" maxlength="5" placeholder="MM/YY">
                 </div>                
                 <button id="submit" type="button" class="uppercase btn-submit">
                   <i class="material-icons">shopping_cart</i>
@@ -336,6 +336,9 @@
                 </button>
               </div>
             </section>
+            <div class="mdl-cell mdl-cell--2-offset mdl-cell--8-col">
+            <div id="message" class="uppercase hidden"></div>
+            </div>
           </section>
           </form>
         </div>

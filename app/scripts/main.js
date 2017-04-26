@@ -73,4 +73,55 @@
   }
 
   // Your custom JavaScript goes here
+  // task 5 - simple validation
+  var submitBtn = document.getElementById('submit');
+  var message = document.getElementById('message');
+  var isValidForm = false;
+  var isValidFirstName = function() {
+    var firstName = document.getElementById('first-name').value;
+    return firstName.length > 2 && /^[a-zA-Z]*$/.test(firstName);
+  };
+  var isValidLastName = function() {
+    var lastName = document.getElementById('last-name').value;
+    return lastName.length > 3 && /^[a-zA-Z]*$/.test(lastName);
+  };
+  var isValidEmail = function() {
+    var email = document.getElementById('email').value;
+    return email.length > 5 && email.indexOf('@') > 0 && email.indexOf('.') > 2;
+  };
+  var isValidPostalCode = function() {
+    var postalCode = document.getElementById('postal-code').value;
+    return /^[0-9]{5}$/.test(postalCode);
+  };
+  var isValidPhone = function() {
+    var phone = document.getElementById('phone').value;
+    return /^\(?([0-9]{3})\)?([ ])([0-9]{3})(([-])([0-9]{2})){2}$/.test(phone);
+  };
+  var isValidCreditCard = function() {
+    var creditCard = document.getElementById('credit-card').value;
+    return /^(([0-9]{4})([-])){3}([0-9]{4})$/.test(creditCard);
+  };
+  var isValidSecurityCode = function() {
+    var securityCode = document.getElementById('security-code').value;
+    return /^[0-9]{3}$/.test(securityCode);
+  };
+  var isValidExpirationDate = function() {
+    var expirationDate = document.getElementById('expiration-date').value;
+    return /^([0])([1-9])([/])([0-9]{2})$|^([1])([0-2])([/])([0-9]{2})$/.test(expirationDate);
+  };
+  submitBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    isValidForm = isValidFirstName() && isValidLastName() && isValidEmail() && isValidPostalCode() && isValidPhone() && isValidCreditCard() && isValidSecurityCode() && isValidExpirationDate();
+    if (isValidForm) {
+      message.classList.remove('hidden');
+      message.classList.remove('error');
+      message.classList.add('success');
+      message.innerHTML = 'the order was sent successfully';
+    } else {
+      message.classList.remove('hidden');
+      message.classList.remove('success');
+      message.classList.add('error');
+      message.innerHTML = 'error - incorrect data';
+    }
+  });
 })();
