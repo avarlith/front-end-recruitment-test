@@ -83,7 +83,7 @@
   };
   var isValidLastName = function() {
     var lastName = document.getElementById('last-name').value;
-    return lastName.length > 3 && /^[a-zA-Z]*$/.test(lastName);
+    return lastName.length > 3 && /^[a-zA-Z ,.'-]*$/.test(lastName);
   };
   var isValidEmail = function() {
     var email = document.getElementById('email').value;
